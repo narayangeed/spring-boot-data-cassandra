@@ -1,0 +1,13 @@
+Open Cassandra CQL Shell:
+
+– Create Cassandra ngttech keyspace:
+
+create keyspace ngttech with replication={'class':'SimpleStrategy', 'replication_factor':1};
+
+– Create tutorial table in the keyspace:
+
+use ngttech;
+ 
+CREATE TABLE Employee( employeeId int PRIMARY KEY,name text,gender text,salary int);
+
+CREATE TABLE address ( city text, state text, zip text, country text);

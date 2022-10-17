@@ -1,0 +1,521 @@
+2022-10-17 17:49:49.250  INFO 26368 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : Starting SpringBootDataCassandraApplication using Java 1.8.0_331 on NGLaptop with PID 26368 (D:\Work\stsWs\spring-boot-data-cassandra\target\classes started by naray in D:\Work\stsWs\spring-boot-data-cassandra)
+2022-10-17 17:49:49.251  INFO 26368 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : No active profile set, falling back to 1 default profile: "default"
+2022-10-17 17:49:49.297  INFO 26368 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-10-17 17:49:49.297  INFO 26368 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-10-17 17:49:49.645  INFO 26368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Cassandra repositories in DEFAULT mode.
+2022-10-17 17:49:49.671  INFO 26368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Reactive Cassandra repository interfaces.
+2022-10-17 17:49:49.793  INFO 26368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Cassandra repositories in DEFAULT mode.
+2022-10-17 17:49:49.797  INFO 26368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Cassandra repository interfaces.
+2022-10-17 17:49:49.800  INFO 26368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Cassandra repositories in DEFAULT mode.
+2022-10-17 17:49:49.814  INFO 26368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 1 Cassandra repository interfaces.
+2022-10-17 17:49:50.383  INFO 26368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2022-10-17 17:49:50.404  INFO 26368 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-17 17:49:50.405  INFO 26368 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-17 17:49:50.603  INFO 26368 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-17 17:49:50.604  INFO 26368 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1306 ms
+2022-10-17 17:49:50.841  INFO 26368 --- [restartedMain] c.d.o.d.internal.core.ContactPoints      : Contact point localhost:9042 resolves to multiple addresses, will use them all ([localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1])
+2022-10-17 17:49:51.019  INFO 26368 --- [restartedMain] c.d.o.d.i.core.DefaultMavenCoordinates   : DataStax Java driver for Apache Cassandra(R) (com.datastax.oss:java-driver-core) version 4.14.1
+2022-10-17 17:49:51.383  INFO 26368 --- [s0-admin-0] c.d.oss.driver.internal.core.time.Clock  : Using native clock for microsecond precision
+2022-10-17 17:49:51.907  WARN 26368 --- [s0-admin-0] c.d.o.d.i.c.l.h.OptionalLocalDcHelper    : [s0|default] You specified datacenter1 as the local DC, but some contact points are from a different DC: Node(endPoint=localhost/0:0:0:0:0:0:0:1:9042, hostId=null, hashCode=17ce3236)=null; please provide the correct local DC, or check your contact points
+2022-10-17 17:49:52.035  INFO 26368 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-10-17 17:49:52.437  INFO 26368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2022-10-17 17:49:52.444  INFO 26368 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : Started SpringBootDataCassandraApplication in 3.61 seconds (JVM running for 4.398)
+2022-10-17 17:50:42.660  INFO 26368 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-17 17:50:42.661  INFO 26368 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-17 17:50:42.662  INFO 26368 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-10-17 17:50:42.851 ERROR 26368 --- [http-nio-9091-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.cassandra.CassandraInvalidQueryException: Query; CQL [INSERT INTO "TBL_EMPLOYEE_DTLS" (employeeid,gender,name,salary) VALUES (?,?,?,?)]; unconfigured table TBL_EMPLOYEE_DTLS; nested exception is com.datastax.oss.driver.api.core.servererrors.InvalidQueryException: unconfigured table TBL_EMPLOYEE_DTLS] with root cause
+
+com.datastax.oss.driver.api.core.servererrors.InvalidQueryException: unconfigured table TBL_EMPLOYEE_DTLS
+	at com.datastax.oss.driver.api.core.servererrors.InvalidQueryException.copy(InvalidQueryException.java:48) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.cql.CqlPrepareSyncProcessor.process(CqlPrepareSyncProcessor.java:59) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.cql.CqlPrepareSyncProcessor.process(CqlPrepareSyncProcessor.java:31) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.prepare(SyncCqlSession.java:224) ~[java-driver-core-4.14.1.jar:na]
+	at org.springframework.data.cassandra.core.CassandraTemplate$PreparedStatementHandler.createPreparedStatement(CassandraTemplate.java:1094) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.cql.CqlTemplate.query(CqlTemplate.java:531) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doExecute(CassandraTemplate.java:976) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doExecute(CassandraTemplate.java:964) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.executeSave(CassandraTemplate.java:915) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.executeSave(CassandraTemplate.java:905) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doInsert(CassandraTemplate.java:700) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doInsert(CassandraTemplate.java:683) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.insert(CassandraTemplate.java:664) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.insert(CassandraTemplate.java:652) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.repository.support.SimpleCassandraRepository.insert(SimpleCassandraRepository.java:256) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_331]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_331]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_331]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_331]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:530) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:286) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:640) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:81) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.23.jar:5.3.23]
+	at com.sun.proxy.$Proxy90.insert(Unknown Source) ~[na:na]
+	at com.ngttech.demo.service.HrmsService.saveEmployee(HrmsService.java:21) ~[classes/:na]
+	at com.ngttech.demo.controller.HrmsController.saveEmployee(HrmsController.java:28) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_331]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_331]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_331]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_331]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_331]
+
+2022-10-17 18:04:17.973  INFO 26368 --- [RMI TCP Connection(23)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-10-17 18:04:20.109  WARN 26368 --- [RMI TCP Connection(23)-127.0.0.1] org.apache.tomcat.util.net.NioEndpoint   : Failed to unlock acceptor for [http-nio-9091] because the local address was not available
+2022-10-17 18:04:20.110  INFO 26368 --- [RMI TCP Connection(23)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-10-17 18:04:20.112 ERROR 26368 --- [http-nio-9091-Acceptor] org.apache.tomcat.util.net.Acceptor      : Socket accept failed
+
+java.nio.channels.AsynchronousCloseException: null
+	at java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:205) ~[na:1.8.0_331]
+	at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:259) ~[na:1.8.0_331]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:547) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:79) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:129) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_331]
+
+2022-10-17 18:04:20.116  INFO 26368 --- [RMI TCP Connection(23)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-10-17 18:04:29.707  INFO 26768 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : Starting SpringBootDataCassandraApplication using Java 1.8.0_331 on NGLaptop with PID 26768 (D:\Work\stsWs\spring-boot-data-cassandra\target\classes started by naray in D:\Work\stsWs\spring-boot-data-cassandra)
+2022-10-17 18:04:29.708  INFO 26768 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : No active profile set, falling back to 1 default profile: "default"
+2022-10-17 18:04:29.754  INFO 26768 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-10-17 18:04:29.754  INFO 26768 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-10-17 18:04:30.099  INFO 26768 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Cassandra repositories in DEFAULT mode.
+2022-10-17 18:04:30.127  INFO 26768 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 0 Reactive Cassandra repository interfaces.
+2022-10-17 18:04:30.243  INFO 26768 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Cassandra repositories in DEFAULT mode.
+2022-10-17 18:04:30.248  INFO 26768 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Cassandra repository interfaces.
+2022-10-17 18:04:30.252  INFO 26768 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Cassandra repositories in DEFAULT mode.
+2022-10-17 18:04:30.267  INFO 26768 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 1 Cassandra repository interfaces.
+2022-10-17 18:04:30.766  INFO 26768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2022-10-17 18:04:30.779  INFO 26768 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-17 18:04:30.779  INFO 26768 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-17 18:04:30.991  INFO 26768 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-17 18:04:30.991  INFO 26768 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1236 ms
+2022-10-17 18:04:31.218  INFO 26768 --- [restartedMain] c.d.o.d.internal.core.ContactPoints      : Contact point localhost:9042 resolves to multiple addresses, will use them all ([localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1])
+2022-10-17 18:04:31.404  INFO 26768 --- [restartedMain] c.d.o.d.i.core.DefaultMavenCoordinates   : DataStax Java driver for Apache Cassandra(R) (com.datastax.oss:java-driver-core) version 4.14.1
+2022-10-17 18:04:31.758  INFO 26768 --- [s0-admin-0] c.d.oss.driver.internal.core.time.Clock  : Using native clock for microsecond precision
+2022-10-17 18:04:32.299  WARN 26768 --- [s0-admin-0] c.d.o.d.i.c.l.h.OptionalLocalDcHelper    : [s0|default] You specified datacenter1 as the local DC, but some contact points are from a different DC: Node(endPoint=localhost/0:0:0:0:0:0:0:1:9042, hostId=null, hashCode=1d9557f4)=null; please provide the correct local DC, or check your contact points
+2022-10-17 18:04:32.429  INFO 26768 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-10-17 18:04:32.816  INFO 26768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2022-10-17 18:04:32.824  INFO 26768 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : Started SpringBootDataCassandraApplication in 3.457 seconds (JVM running for 4.208)
+2022-10-17 18:04:43.489  INFO 26768 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-17 18:04:43.489  INFO 26768 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-17 18:04:43.490  INFO 26768 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-10-17 18:04:43.623 ERROR 26768 --- [http-nio-9091-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.cassandra.CassandraInvalidQueryException: Query; CQL [INSERT INTO "TBL_EMPLOYEE_DTLS" (employeeid,gender,name,salary) VALUES (?,?,?,?)]; unconfigured table TBL_EMPLOYEE_DTLS; nested exception is com.datastax.oss.driver.api.core.servererrors.InvalidQueryException: unconfigured table TBL_EMPLOYEE_DTLS] with root cause
+
+com.datastax.oss.driver.api.core.servererrors.InvalidQueryException: unconfigured table TBL_EMPLOYEE_DTLS
+	at com.datastax.oss.driver.api.core.servererrors.InvalidQueryException.copy(InvalidQueryException.java:48) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.cql.CqlPrepareSyncProcessor.process(CqlPrepareSyncProcessor.java:59) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.cql.CqlPrepareSyncProcessor.process(CqlPrepareSyncProcessor.java:31) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.prepare(SyncCqlSession.java:224) ~[java-driver-core-4.14.1.jar:na]
+	at org.springframework.data.cassandra.core.CassandraTemplate$PreparedStatementHandler.createPreparedStatement(CassandraTemplate.java:1094) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.cql.CqlTemplate.query(CqlTemplate.java:531) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doExecute(CassandraTemplate.java:976) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doExecute(CassandraTemplate.java:964) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.executeSave(CassandraTemplate.java:915) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.executeSave(CassandraTemplate.java:905) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doInsert(CassandraTemplate.java:700) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doInsert(CassandraTemplate.java:683) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.insert(CassandraTemplate.java:664) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.insert(CassandraTemplate.java:652) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.repository.support.SimpleCassandraRepository.insert(SimpleCassandraRepository.java:256) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_331]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_331]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_331]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_331]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:530) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:286) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:640) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:81) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.23.jar:5.3.23]
+	at com.sun.proxy.$Proxy90.insert(Unknown Source) ~[na:na]
+	at com.ngttech.demo.service.HrmsService.saveEmployee(HrmsService.java:21) ~[classes/:na]
+	at com.ngttech.demo.controller.HrmsController.saveEmployee(HrmsController.java:28) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_331]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_331]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_331]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_331]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_331]
+
+2022-10-17 18:06:40.970 ERROR 26768 --- [http-nio-9091-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.cassandra.CassandraInvalidQueryException: Query; CQL [SELECT * FROM "TBL_EMPLOYEE_DTLS"]; unconfigured table TBL_EMPLOYEE_DTLS; nested exception is com.datastax.oss.driver.api.core.servererrors.InvalidQueryException: unconfigured table TBL_EMPLOYEE_DTLS] with root cause
+
+com.datastax.oss.driver.api.core.servererrors.InvalidQueryException: unconfigured table TBL_EMPLOYEE_DTLS
+	at com.datastax.oss.driver.api.core.servererrors.InvalidQueryException.copy(InvalidQueryException.java:48) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.cql.CqlPrepareSyncProcessor.process(CqlPrepareSyncProcessor.java:59) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.cql.CqlPrepareSyncProcessor.process(CqlPrepareSyncProcessor.java:31) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.prepare(SyncCqlSession.java:224) ~[java-driver-core-4.14.1.jar:na]
+	at org.springframework.data.cassandra.core.CassandraTemplate$PreparedStatementHandler.createPreparedStatement(CassandraTemplate.java:1094) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.cql.CqlTemplate.query(CqlTemplate.java:531) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.cql.CqlTemplate.query(CqlTemplate.java:568) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doQuery(CassandraTemplate.java:942) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doSelect(CassandraTemplate.java:452) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.select(CassandraTemplate.java:437) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.repository.support.SimpleCassandraRepository.findAll(SimpleCassandraRepository.java:147) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.repository.support.SimpleCassandraRepository.findAll(SimpleCassandraRepository.java:48) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_331]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_331]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_331]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_331]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:530) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:286) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:640) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:81) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.23.jar:5.3.23]
+	at com.sun.proxy.$Proxy90.findAll(Unknown Source) ~[na:na]
+	at com.ngttech.demo.service.HrmsService.getAllEmployees(HrmsService.java:51) ~[classes/:na]
+	at com.ngttech.demo.controller.HrmsController.getAllEmployees(HrmsController.java:48) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_331]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_331]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_331]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_331]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_331]
+
+2022-10-17 18:07:49.276  INFO 26768 --- [RMI TCP Connection(13)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-10-17 18:07:49.382  INFO 26768 --- [RMI TCP Connection(13)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-10-17 18:07:49.383  INFO 26768 --- [RMI TCP Connection(13)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-10-17 18:08:39.134  INFO 14860 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : Starting SpringBootDataCassandraApplication using Java 1.8.0_331 on NGLaptop with PID 14860 (D:\Work\stsWs\spring-boot-data-cassandra\target\classes started by naray in D:\Work\stsWs\spring-boot-data-cassandra)
+2022-10-17 18:08:39.136  INFO 14860 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : No active profile set, falling back to 1 default profile: "default"
+2022-10-17 18:08:39.176  INFO 14860 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-10-17 18:08:39.177  INFO 14860 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-10-17 18:08:39.518  INFO 14860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Cassandra repositories in DEFAULT mode.
+2022-10-17 18:08:39.541  INFO 14860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 Reactive Cassandra repository interfaces.
+2022-10-17 18:08:39.668  INFO 14860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Cassandra repositories in DEFAULT mode.
+2022-10-17 18:08:39.671  INFO 14860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Cassandra repository interfaces.
+2022-10-17 18:08:39.674  INFO 14860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Cassandra repositories in DEFAULT mode.
+2022-10-17 18:08:39.687  INFO 14860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 1 Cassandra repository interfaces.
+2022-10-17 18:08:40.193  INFO 14860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2022-10-17 18:08:40.202  INFO 14860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-17 18:08:40.202  INFO 14860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-17 18:08:40.425  INFO 14860 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-17 18:08:40.425  INFO 14860 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1248 ms
+2022-10-17 18:08:40.704  INFO 14860 --- [restartedMain] c.d.o.d.internal.core.ContactPoints      : Contact point localhost:9042 resolves to multiple addresses, will use them all ([localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1])
+2022-10-17 18:08:40.905  INFO 14860 --- [restartedMain] c.d.o.d.i.core.DefaultMavenCoordinates   : DataStax Java driver for Apache Cassandra(R) (com.datastax.oss:java-driver-core) version 4.14.1
+2022-10-17 18:08:41.286  INFO 14860 --- [s0-admin-0] c.d.oss.driver.internal.core.time.Clock  : Using native clock for microsecond precision
+2022-10-17 18:08:41.907  WARN 14860 --- [s0-admin-0] c.d.o.d.i.c.l.h.OptionalLocalDcHelper    : [s0|default] You specified datacenter1 as the local DC, but some contact points are from a different DC: Node(endPoint=localhost/0:0:0:0:0:0:0:1:9042, hostId=null, hashCode=2027480a)=null; please provide the correct local DC, or check your contact points
+2022-10-17 18:08:42.090  INFO 14860 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-10-17 18:08:42.556  INFO 14860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2022-10-17 18:08:42.563  INFO 14860 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : Started SpringBootDataCassandraApplication in 3.764 seconds (JVM running for 4.528)
+2022-10-17 18:09:47.872  INFO 14860 --- [http-nio-9091-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-17 18:09:47.872  INFO 14860 --- [http-nio-9091-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-17 18:09:47.873  INFO 14860 --- [http-nio-9091-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-10-17 18:13:52.064  INFO 14860 --- [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-10-17 18:13:52.175  INFO 14860 --- [RMI TCP Connection(14)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-10-17 18:13:52.177  INFO 14860 --- [RMI TCP Connection(14)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-10-17 18:13:58.888  INFO 21116 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : Starting SpringBootDataCassandraApplication using Java 1.8.0_331 on NGLaptop with PID 21116 (D:\Work\stsWs\spring-boot-data-cassandra\target\classes started by naray in D:\Work\stsWs\spring-boot-data-cassandra)
+2022-10-17 18:13:58.889  INFO 21116 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : No active profile set, falling back to 1 default profile: "default"
+2022-10-17 18:13:58.932  INFO 21116 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-10-17 18:13:58.933  INFO 21116 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-10-17 18:13:59.271  INFO 21116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Cassandra repositories in DEFAULT mode.
+2022-10-17 18:13:59.298  INFO 21116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 0 Reactive Cassandra repository interfaces.
+2022-10-17 18:13:59.418  INFO 21116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Cassandra repositories in DEFAULT mode.
+2022-10-17 18:13:59.420  INFO 21116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Cassandra repository interfaces.
+2022-10-17 18:13:59.424  INFO 21116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Cassandra repositories in DEFAULT mode.
+2022-10-17 18:13:59.438  INFO 21116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 1 Cassandra repository interfaces.
+2022-10-17 18:14:00.000  INFO 21116 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2022-10-17 18:14:00.022  INFO 21116 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-17 18:14:00.022  INFO 21116 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-17 18:14:00.256  INFO 21116 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-17 18:14:00.257  INFO 21116 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1323 ms
+2022-10-17 18:14:00.500  INFO 21116 --- [restartedMain] c.d.o.d.internal.core.ContactPoints      : Contact point localhost:9042 resolves to multiple addresses, will use them all ([localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1])
+2022-10-17 18:14:00.676  INFO 21116 --- [restartedMain] c.d.o.d.i.core.DefaultMavenCoordinates   : DataStax Java driver for Apache Cassandra(R) (com.datastax.oss:java-driver-core) version 4.14.1
+2022-10-17 18:14:01.070  INFO 21116 --- [s0-admin-0] c.d.oss.driver.internal.core.time.Clock  : Using native clock for microsecond precision
+2022-10-17 18:14:01.614  WARN 21116 --- [s0-admin-0] c.d.o.d.i.c.l.h.OptionalLocalDcHelper    : [s0|default] You specified datacenter1 as the local DC, but some contact points are from a different DC: Node(endPoint=localhost/0:0:0:0:0:0:0:1:9042, hostId=null, hashCode=5febac1b)=null; please provide the correct local DC, or check your contact points
+2022-10-17 18:14:01.744  INFO 21116 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-10-17 18:14:02.167  INFO 21116 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2022-10-17 18:14:02.175  INFO 21116 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : Started SpringBootDataCassandraApplication in 3.617 seconds (JVM running for 4.377)
+2022-10-17 18:14:13.303  INFO 21116 --- [http-nio-9091-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-17 18:14:13.303  INFO 21116 --- [http-nio-9091-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-17 18:14:13.304  INFO 21116 --- [http-nio-9091-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-10-17 18:14:13.446 ERROR 21116 --- [http-nio-9091-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.cassandra.CassandraInvalidQueryException: Query; CQL [INSERT INTO employee (address,employeeid,gender,name,salary) VALUES (?,?,?,?,?)]; Undefined column name address; nested exception is com.datastax.oss.driver.api.core.servererrors.InvalidQueryException: Undefined column name address] with root cause
+
+com.datastax.oss.driver.api.core.servererrors.InvalidQueryException: Undefined column name address
+	at com.datastax.oss.driver.api.core.servererrors.InvalidQueryException.copy(InvalidQueryException.java:48) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.cql.CqlPrepareSyncProcessor.process(CqlPrepareSyncProcessor.java:59) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.cql.CqlPrepareSyncProcessor.process(CqlPrepareSyncProcessor.java:31) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230) ~[java-driver-core-4.14.1.jar:na]
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.prepare(SyncCqlSession.java:224) ~[java-driver-core-4.14.1.jar:na]
+	at org.springframework.data.cassandra.core.CassandraTemplate$PreparedStatementHandler.createPreparedStatement(CassandraTemplate.java:1094) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.cql.CqlTemplate.query(CqlTemplate.java:531) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doExecute(CassandraTemplate.java:976) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doExecute(CassandraTemplate.java:964) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.executeSave(CassandraTemplate.java:915) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.executeSave(CassandraTemplate.java:905) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doInsert(CassandraTemplate.java:700) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.doInsert(CassandraTemplate.java:683) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.insert(CassandraTemplate.java:664) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.core.CassandraTemplate.insert(CassandraTemplate.java:652) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at org.springframework.data.cassandra.repository.support.SimpleCassandraRepository.insert(SimpleCassandraRepository.java:256) ~[spring-data-cassandra-3.4.3.jar:3.4.3]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_331]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_331]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_331]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_331]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:530) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:286) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:640) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:81) ~[spring-data-commons-2.7.3.jar:2.7.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar:5.3.23]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.23.jar:5.3.23]
+	at com.sun.proxy.$Proxy90.insert(Unknown Source) ~[na:na]
+	at com.ngttech.demo.service.HrmsService.saveEmployee(HrmsService.java:21) ~[classes/:na]
+	at com.ngttech.demo.controller.HrmsController.saveEmployee(HrmsController.java:28) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_331]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_331]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_331]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_331]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_331]
+
+2022-10-17 18:14:34.568  INFO 21116 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-10-17 18:14:34.673  INFO 21116 --- [RMI TCP Connection(9)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-10-17 18:14:34.675  INFO 21116 --- [RMI TCP Connection(9)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-10-17 18:14:48.161  INFO 25624 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : Starting SpringBootDataCassandraApplication using Java 1.8.0_331 on NGLaptop with PID 25624 (D:\Work\stsWs\spring-boot-data-cassandra\target\classes started by naray in D:\Work\stsWs\spring-boot-data-cassandra)
+2022-10-17 18:14:48.164  INFO 25624 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : No active profile set, falling back to 1 default profile: "default"
+2022-10-17 18:14:48.211  INFO 25624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-10-17 18:14:48.211  INFO 25624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-10-17 18:14:48.633  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Cassandra repositories in DEFAULT mode.
+2022-10-17 18:14:48.667  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 0 Reactive Cassandra repository interfaces.
+2022-10-17 18:14:48.806  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Cassandra repositories in DEFAULT mode.
+2022-10-17 18:14:48.809  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Cassandra repository interfaces.
+2022-10-17 18:14:48.813  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Cassandra repositories in DEFAULT mode.
+2022-10-17 18:14:48.827  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 1 Cassandra repository interfaces.
+2022-10-17 18:14:49.397  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9091 (http)
+2022-10-17 18:14:49.411  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-17 18:14:49.411  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-17 18:14:49.625  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-17 18:14:49.625  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1414 ms
+2022-10-17 18:14:49.822  INFO 25624 --- [restartedMain] c.d.o.d.internal.core.ContactPoints      : Contact point localhost:9042 resolves to multiple addresses, will use them all ([localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1])
+2022-10-17 18:14:49.981  INFO 25624 --- [restartedMain] c.d.o.d.i.core.DefaultMavenCoordinates   : DataStax Java driver for Apache Cassandra(R) (com.datastax.oss:java-driver-core) version 4.14.1
+2022-10-17 18:14:50.351  INFO 25624 --- [s0-admin-0] c.d.oss.driver.internal.core.time.Clock  : Using native clock for microsecond precision
+2022-10-17 18:14:52.794  WARN 25624 --- [s0-admin-1] c.d.o.d.i.c.control.ControlConnection    : [s0] Error connecting to Node(endPoint=localhost/0:0:0:0:0:0:0:1:9042, hostId=null, hashCode=2b5770d3), trying next node (ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (io.netty.channel.StacklessClosedChannelException))
+2022-10-17 18:14:52.955  WARN 25624 --- [s0-admin-0] c.d.o.d.i.c.l.h.OptionalLocalDcHelper    : [s0|default] You specified datacenter1 as the local DC, but some contact points are from a different DC: Node(endPoint=localhost/0:0:0:0:0:0:0:1:9042, hostId=null, hashCode=2b5770d3)=null; please provide the correct local DC, or check your contact points
+2022-10-17 18:14:53.109  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-10-17 18:14:53.532  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9091 (http) with context path ''
+2022-10-17 18:14:53.539  INFO 25624 --- [restartedMain] c.n.d.SpringBootDataCassandraApplication : Started SpringBootDataCassandraApplication in 5.777 seconds (JVM running for 6.627)
+2022-10-17 18:14:59.389  INFO 25624 --- [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-17 18:14:59.389  INFO 25624 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-17 18:14:59.390  INFO 25624 --- [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-10-17 18:15:08.165  INFO 25624 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-10-17 18:15:08.299  INFO 25624 --- [RMI TCP Connection(8)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-10-17 18:15:08.299  INFO 25624 --- [RMI TCP Connection(8)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'

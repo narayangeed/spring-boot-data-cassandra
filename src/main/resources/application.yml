@@ -1,0 +1,17 @@
+server:
+   port: 9091
+   servlet:
+      context-path: /
+
+logging:
+   file:
+      name: spring-boot-data-cassandra.log
+
+spring:     
+   application:
+      name: spring-boot-data-cassandra
+      
+
+
+
+
